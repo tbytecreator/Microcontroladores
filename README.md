@@ -29,3 +29,10 @@ Aprenda a usar botões e um buzzer para produzir um piano de brinquedo.
 
 Aula relacionada:
 https://www.youtube.com/watch?v=0g5crey-lYI&list=PLM6UACsvLoSAW4Hw5UZ8ydkA0rRRwfYZm&index=7
+
+## temperatura
+
+Aprenda a ler a temperatura ambiente de um local.
+
+Aula relacionada:
+https://www.youtube.com/watch?v=NKbmdpkhuEQ
