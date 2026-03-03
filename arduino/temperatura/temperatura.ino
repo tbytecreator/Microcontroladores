@@ -1,19 +1,29 @@
-// ========================================
-// tbytecreator 2025-11-24 
-// Medindo Temperatura com Sensor NTC
-// ========================================
-int pinoNtc = 5;     //Pino analógico onde o sensor NTC está conectado
-int valorSensor = 0; //Variável para armazenar o valor lido do sensor 
+/*========================================================================== 
+tbytecreator 2026 
+Alarme de Temperatura simples
+==========================================================================*/ 
+int Pino_NTC = 5;   //Sensor NTC conectado ao Pino 5 
+int Buzzer = 10;    //Buzzer no pino 10
+int Valor_Sensor = 0;
 
-void setup()
+void setup() 
 {
-    Serial.begin(9600); // enviar dados através da porta USB
+    Serial.begin(9600);
+    pinMode(Buzzer, OUTPUT); 
 }
 
-void loop()
+void loop() 
 {
-    valorSensor = analogRead(pinoNtc);  //Lê sinal do sensor
-    Serial.print ("Valor do Sensor = ");//Escreve mensagem no monitor
-    Serial.println (valorSensor);       //Escreve valor do sensor no monitor
-    delay (1000);                       //Espera 1 segundo para mostrar novo valor
+    Valor_Sensor = analogRead(Pino_NTC); //Lê sinal do sensor 
+    Serial.println(Valor_Sensor);
+
+    //Verifica se a temperatura ultrapassou o limite 
+    if (Valor_Sensor > 900)
+    { 
+        digitalWrite(Buzzer, HIGH); // Se sim, toca alarme 
+    }
+    else 
+    {
+        digitalWrite(Buzzer, LOW); // Caso contrário desliga o alarme 
+    } 
 }
